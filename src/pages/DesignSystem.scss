@@ -1,0 +1,114 @@
+.design-system-component {
+    margin: 0 auto;
+    max-width: 1110px;
+    padding: 24px;
+    display: grid;
+    gap: 60px;
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    header {
+        img {
+            margin-bottom: 10px;
+        }
+    }
+
+    section {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        padding-bottom: 30px;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .colors-section {
+        margin-top: 100px;
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+
+            .color {
+                display: flex;
+                align-items: center;
+                background-color: white;
+                padding: 15px;
+                border-radius: 13px;
+
+                .preview {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    margin-right: 16px;
+                    border: 1px solid #f1f1f1;
+                }
+            }
+        }
+    }
+
+    .typography-section {
+        .font-preview {
+            display: grid;
+            align-items: center;
+            grid-template-columns: calc(50% - 50px) calc(50% - 50px);
+            gap: 100px;
+
+
+            h2 {
+                font-size: 5rem;
+            }
+
+            p {
+                font-size: 1.125rem;
+                letter-spacing: 5px;
+                word-break: break-all;
+
+                span {
+                    font-weight: 700;
+                    color: var(--dark-1);
+                }
+            }
+        }
+    }
+
+    .buttons-section {
+        .content {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+            .preview {
+                background-color: var(--white);
+                padding: 16px;
+                border-radius: 13px;
+                text-align: center;
+
+                &.purple {
+                    background-color: var(--purple-1);
+                }
+            }
+        }
+    }
+
+    .form-elems-section {
+        .content {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+        }
+
+        padding-bottom: 300px;
+    }
+}

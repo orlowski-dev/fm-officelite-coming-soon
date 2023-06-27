@@ -1,0 +1,96 @@
+.custom-select-area {
+    width: 100%;
+    position: relative;
+
+    user-select: none;
+
+    p {
+        font-size: 1rem;
+        color: var(--dark-1);
+        font-weight: 700;
+
+        span {
+            color: var(--grey-1);
+            padding-left: 6px;
+        }
+    }
+
+    .curr-selected,
+    .option {
+        cursor: pointer;
+    }
+
+    .curr-selected {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        border-bottom: 1px solid var(--input-grey);
+
+        .select-icon {
+            img {
+                transition: transform .1s ease-in;
+
+                &.rotated {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .options {
+        display: none;
+        top: 60px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 50;
+
+        &.visible {
+            display: block;
+        }
+
+        padding: 22px 30px;
+        background-color: var(--white);
+        border-radius: 13px;
+        margin-top: 16px;
+        border: 1px solid var(--input-grey);
+        box-shadow: 0 50px 50px -25px rgba(75, 92, 154, 0.74);
+
+        .option {
+            position: relative;
+            padding: 16px 2px;
+            border-bottom: 1px solid var(--input-grey);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.selected {
+                &::after {
+                    content: '';
+                    animation: .13s fadeIn;
+                    transform-origin: center;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 12px;
+                    right: 2px;
+                    background: url('../assets/sign-up/icon-check.svg') no-repeat center;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

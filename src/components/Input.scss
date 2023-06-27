@@ -1,0 +1,41 @@
+.input-area {
+    position: relative;
+
+    .input {
+        padding: 16px;
+        border: none;
+        border-bottom: 1px solid var(--input-grey);
+        font-size: 1rem;
+        background: none;
+        width: 100%;
+        color: var(--dark-1);
+
+        transition: border-color .1s ease-in, color .1s ease-in;
+
+        &::placeholder {
+            color: var(--input-grey);
+        }
+    }
+
+    &.invalid {
+        input {
+            border-bottom-color: var(--red-1);
+            color: var(--red-1);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            width: 20px;
+            height: 20px;
+            background-image: url('../assets/sign-up/icon-cross.svg');
+            background-repeat: no-repeat;
+
+            input {
+                padding-left: 56px;
+            }
+        }
+    }
+}

@@ -8,4 +8,38 @@
     -webkit-text-size-adjust: 100%;
 
     font-family: 'Kumbh Sans', sans-serif;
+
+    --white: #ffffff;
+    --light-bg: #fafafa;
+
+    --purple-1: #5175ff;
+    --purple-2: #829cff;
+    --dark-1: #333950;
+    --dark-2: #25293a;
+    --grey-1: #747b96;
+    --red-1: #f05b5b;
+    --button-secondary: #e4eaff;
+    --button-secondary-hv: #d3dcff;
+    --input-grey: #B7BBC8;
+}
+
+body {
+    background-color: var(--light-bg);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--dark-1);
+}
+
+p {
+    color: var(--grey-1);
 }

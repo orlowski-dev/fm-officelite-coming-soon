@@ -1,0 +1,38 @@
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 50px;
+    border-radius: 50px;
+    border: none;
+    transition: background-color .1s ease-in, color .1s ease-in;
+    display: inline-block;
+
+    &.primary {
+        background-color: var(--purple-1);
+        color: white;
+
+        &:hover {
+            background-color: var(--purple-2);
+        }
+    }
+
+    &.secondary {
+        background-color: var(--button-secondary);
+        color: var(--purple-1);
+
+        &:hover {
+            background-color: var(--button-secondary-hv);
+        }
+    }
+
+    &.white {
+        background-color: var(--white);
+        color: var(--purple-1);
+
+        &:hover {
+            color: var(--purple-2);
+        }
+    }
+}
