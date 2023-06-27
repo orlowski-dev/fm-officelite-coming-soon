@@ -1,9 +1,17 @@
 import './Home.scss';
+import Cta from '../components/Cta';
 
 function Home() {
+
+    const h1Content = 'A simple solution to complex tasks is coming soon';
+    const pContent = 'Say goodbye to inefficient juggling of multiple app, teams, and projects. Officelite is the new collaboration platform built with an intuitive interface to improve producivity.'
+
     return <div className="home-component">
-        <h1>Officelite Coming soon</h1>
-        <p>Frontend mentor challenge</p>
+        <Cta
+            h1Content={h1Content}
+            pContent={pContent}
+            version='home'
+        />
     </div>
 }
 

@@ -42,4 +42,5 @@ h3 {
 
 p {
     color: var(--grey-1);
+    line-height: 1.5;
 }
