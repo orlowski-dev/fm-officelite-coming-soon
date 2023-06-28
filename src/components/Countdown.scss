@@ -1,0 +1,45 @@
+.countdown-component {
+
+    h2 {
+        color: var(--white);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 1rem;
+
+        span {
+            color: var(--purple-1);
+        }
+    }
+
+    .tiles-container {
+        display: grid;
+        gap: 13px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 23px;
+        text-align: center;
+
+        .tile {
+            padding: 16px 10px;
+            border-radius: 4px;
+            background-color: var(--dark-1);
+            text-align: center;
+
+            h3 {
+                color: var(--white);
+                font-size: 2rem;
+            }
+
+            p {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .countdown-component {
+        .tiles-container .tile h3 {
+            font-size: 3rem;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Basic",
+        "price": "Free",
+        "limitations": "Up to 5 users for free",
+        "features": [
+            "Basic document collaboration",
+            "2 GB storage",
+            "Great security and support"
+        ]
+    },
+    {
+        "name": "Pro",
+        "price": "$9.99",
+        "limitations": "Per user, billed monthly",
+        "features": [
+            "All essentional integrations",
+            "50 GB storage",
+            "More control and insights"
+        ]
+    },
+    {
+        "name": "Ultimate",
+        "price": "$19.99",
+        "limitations": "Per user, billed monthly",
+        "features": [
+            "Robust work management",
+            "100 BG storage",
+            "VIP support"
+        ]
+    }
+]

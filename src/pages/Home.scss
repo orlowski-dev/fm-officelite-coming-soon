@@ -1,0 +1,33 @@
+.home-component {
+    animation: .13s fadeIn;
+
+    .plan-cards-container {
+        max-width: 1110px;
+        margin: 0 auto;
+        margin-top: 60px;
+        padding: 24px;
+
+        display: grid;
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1110px) {
+    .home-component {
+        .plan-cards-container {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 39px;
+            max-width: 1189px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

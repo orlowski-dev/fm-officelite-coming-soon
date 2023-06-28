@@ -1,0 +1,93 @@
+.plan-card-component {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "namePrice"
+        "features"
+        "buttonArea";
+    text-align: center;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 13px;
+    box-shadow: 0 50px 50px -25px rgba(75, 92, 154, 24.72%);
+
+    &.highlighted {
+        background-color: var(--purple-1);
+        background-image: url('../assets/home/bg-pattern-pricing.svg');
+        background-repeat: no-repeat;
+        background-size: 880px;
+        background-position: top -380px center;
+
+
+        .name-n-price {
+
+            h2,
+            h3,
+            p {
+                color: var(--white);
+            }
+        }
+
+        .features ul li {
+            color: var(--white);
+        }
+    }
+
+    .name-n-price {
+        grid-area: namePrice;
+        display: grid;
+        gap: 10px;
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 1.20rem;
+        }
+
+        h3 {
+            font-size: 3.5rem;
+        }
+
+        p {
+            color: var(--dark-1);
+        }
+    }
+
+    .features {
+        grid-area: features;
+        margin-top: 46px;
+
+        ul li {
+            list-style: none;
+            color: var(--grey-1);
+            line-height: 1.8;
+        }
+    }
+
+    .button-area {
+        grid-area: buttonArea;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1110px) {
+    .plan-card-component {
+        grid-template-areas:
+            "namePrice features"
+            "buttonArea features";
+        text-align: left;
+        padding: 48px;
+
+        &.highlighted {
+            background-position: top -300px left -325px;
+        }
+
+        .name-n-price {
+            h2 {
+                margin-bottom: unset;
+            }
+        }
+
+        .features {
+            margin-top: 68px;
+        }
+    }
+}
