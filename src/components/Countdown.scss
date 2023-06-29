@@ -1,5 +1,7 @@
 .countdown-component {
 
+    max-width: 448px;
+
     &.light {
         h2 {
             color: var(--dark-2);

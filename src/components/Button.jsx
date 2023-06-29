@@ -13,7 +13,7 @@ Button.propTypes = {
     role: PropTypes.string,
     linkTo: PropTypes.string,
     content: PropTypes.string,
-    isLink: PropTypes.string
+    isLink: PropTypes.bool
 }
 
 
