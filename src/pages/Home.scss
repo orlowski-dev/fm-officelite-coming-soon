@@ -1,6 +1,4 @@
 .home-component {
-    animation: .13s fadeIn;
-
     .plan-cards-container {
         max-width: 1110px;
         margin: 0 auto;
@@ -19,15 +17,5 @@
             padding: 39px;
             max-width: 1189px;
         }
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
     }
 }

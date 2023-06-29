@@ -1,8 +1,10 @@
 import './Home.scss';
-import Cta from '../components/Cta';
+import HeaderAndIntro from '../components/HeaderAndIntro';
 import PlanCard from '../components/PlanCard';
 import PlanData from '../data/plansData.json';
 import FooterHome from '../components/FooterHome';
+import ChartsIllustration from '../assets/home/illustration-charts.svg';
+import Button from '../components/Button';
 
 function Home() {
 
@@ -20,11 +22,15 @@ function Home() {
         />
     });
 
+    const img = <img src={ChartsIllustration} alt='charts illustration' />;
+    const button = <div><Button className='primary' linkTo='/' content='Get Started' /></div>;
+
     return <div className="home-component">
-        <Cta
+        <HeaderAndIntro
             h1Content={h1Content}
             pContent={pContent}
-            version='home'
+            imgFormSectionComponent={img}
+            contentAction={button}
         />
         <div className="plan-cards-container">
             {planCards}
