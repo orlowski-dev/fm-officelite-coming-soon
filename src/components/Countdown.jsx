@@ -29,33 +29,37 @@ function getTargetDate() {
     let targetTime = new Date();
     targetTime = targetTime.setDate(targetTime.getDate() + 47);
     targetTime = new Date(targetTime);
-    // console.log(`${targetTime.getFullYear()}-${getMonth(targetTime.getMonth())}-${targetTime.getDate()} 00:00`);
+
     return `${targetTime.getFullYear()}-${getMonth(targetTime.getMonth())}-${targetTime.getDate()} 00:00`;
 }
 
-function Countdown({ theme }) {
-    const targetDate = new Date(getTargetDate());
-    const [currentTime, setCurrentTime] = useState(new Date().getTime());
-    const [timeRemaining, setTimeRemaining] = useState(targetDate.getTime() - currentTime);
-    const [timeRemainingToDisplay, setTimeRemainingToDisplay] = useState([{}]);
+function calculateTimeRemaining(timeRemaining) {
+    return [{
+        days: Math.floor(timeRemaining / 1000 / 60 / 60 / 24),
+        hours: Math.floor(timeRemaining / 1000 / 60 / 60) % 24,
+        minutes: Math.floor(timeRemaining / 1000 / 60) % 60,
+        seconds: Math.floor(timeRemaining / 1000) % 60
+    }]
+}
 
+
+function Countdown({ theme }) {
+
+    const targetDate = new Date(getTargetDate());
+    const [timeRemaining, setTimeRemaining] = useState(
+        calculateTimeRemaining(targetDate.getTime() - new Date().getTime())
+    );
 
     useEffect(() => {
-        let timer = setInterval(() => {
-            setCurrentTime(new Date().getTime());
-            setTimeRemaining(targetDate.getTime() - currentTime);
-            setTimeRemainingToDisplay([{
-                days: Math.floor(timeRemaining / 1000 / 60 / 60 / 24),
-                hours: Math.floor(timeRemaining / 1000 / 60 / 60) % 24,
-                minutes: Math.floor(timeRemaining / 1000 / 60) % 60,
-                seconds: Math.floor(timeRemaining / 1000) % 60
-            }]);
+        const interval = setInterval(() => {
+            setTimeRemaining(
+                calculateTimeRemaining(targetDate.getTime() - new Date().getTime())
+            );
         }, 1000)
 
-        return () => {
-            clearInterval(timer);
-        }
+        return () => clearInterval(interval);
     })
+
 
     return <div className={`countdown-component ${theme === 'light' ? 'light' : ''}`}>
         <h2>
@@ -63,19 +67,19 @@ function Countdown({ theme }) {
         </h2>
         <div className="tiles-container">
             <div className="tile">
-                <h3>{timeRemainingToDisplay[0].days}</h3>
+                <h3>{timeRemaining[0].days}</h3>
                 <p>days</p>
             </div>
             <div className="tile">
-                <h3>{addZeroBeforValue(timeRemainingToDisplay[0].hours)}</h3>
+                <h3>{addZeroBeforValue(timeRemaining[0].hours)}</h3>
                 <p>hours</p>
             </div>
             <div className="tile">
-                <h3>{addZeroBeforValue(timeRemainingToDisplay[0].minutes)}</h3>
+                <h3>{addZeroBeforValue(timeRemaining[0].minutes)}</h3>
                 <p>min</p>
             </div>
             <div className="tile">
-                <h3>{addZeroBeforValue(timeRemainingToDisplay[0].seconds)}</h3>
+                <h3>{addZeroBeforValue(timeRemaining[0].seconds)}</h3>
                 <p>sec</p>
             </div>
         </div>
