@@ -1,9 +1,22 @@
-.cta-component {
+.header-and-sign-up-component {
     padding: 24px;
 
     background: url('../assets/home/bg-pattern-header.svg') no-repeat;
     background-size: 458px;
     background-position: top -169px center;
+
+    &.for-sign-up {
+        .container {
+            grid-template-areas:
+                "content"
+                "imgForm";
+            grid-template-columns: 1fr;
+
+            .content {
+                text-align: center;
+            }
+        }
+    }
 
     h1 {
         font-size: 2.5rem;
@@ -22,12 +35,12 @@
         margin-top: 58px;
         display: grid;
         grid-template-areas:
-            "imgCountdown"
+            "imgForm"
             "content";
         gap: 30px;
 
         .img-form-section {
-            grid-area: imgCountdown;
+            grid-area: imgForm;
             text-align: center;
 
             img {
@@ -40,12 +53,17 @@
             text-align: center;
             display: grid;
             gap: 20px;
+
+            .countdown-component {
+                margin: 40px auto;
+                margin-bottom: 0;
+            }
         }
     }
 }
 
 @media screen and (min-width: 768px) {
-    .cta-component {
+    .header-and-sign-up-component {
         padding: 39px;
 
         background-size: 666px;
@@ -55,9 +73,13 @@
             text-align: left;
         }
 
+        &.for-sign-up {
+            background-image: none;
+        }
+
         .container {
             grid-template-areas:
-                "content imgCountdown";
+                "content imgForm";
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
             margin-top: 38px;
@@ -76,9 +98,26 @@
 }
 
 @media screen and (min-width: 1110px) {
-    .cta-component {
+    .header-and-sign-up-component {
         background-size: 1134px;
         background-position: top -480px right -318px;
+
+        &.for-sign-up {
+            .container {
+                grid-template-areas:
+                    "content imgForm";
+                grid-template-columns: 50% 50%;
+
+                .content {
+                    text-align: left;
+
+                    .countdown-component {
+                        margin: 40px 0 0;
+                    }
+                }
+
+            }
+        }
 
         .container {
             .content {

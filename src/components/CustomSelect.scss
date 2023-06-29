@@ -40,7 +40,7 @@
 
     .options {
         display: none;
-        top: 60px;
+        top: 50px;
         left: 0;
         position: absolute;
         width: 100%;
@@ -50,7 +50,7 @@
             display: block;
         }
 
-        padding: 22px 30px;
+        padding: 5px 30px;
         background-color: var(--white);
         border-radius: 13px;
         margin-top: 16px;
@@ -61,6 +61,10 @@
             position: relative;
             padding: 16px 2px;
             border-bottom: 1px solid var(--input-grey);
+
+            p {
+                text-align: left;
+            }
 
             &:last-child {
                 border-bottom: none;
@@ -74,7 +78,7 @@
                     width: 20px;
                     height: 20px;
                     position: absolute;
-                    top: 12px;
+                    top: 18px;
                     right: 2px;
                     background: url('../assets/sign-up/icon-check.svg') no-repeat center;
                 }

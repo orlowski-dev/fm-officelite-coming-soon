@@ -6,12 +6,12 @@ import Countdown from './Countdown';
 import Button from './Button';
 
 function FooterHome() {
-    return <footer>
+    return <footer className='footer-home-component'>
         <div className="bg"></div>
         <div className="countdown-section">
             <Countdown />
             <div className="button-area">
-                <Button className='primary' linkTo='/' content='Get Started' />
+                <Button isLink={true} className='primary' linkTo='/sign-up' content='Get Started' />
             </div>
         </div>
         <div className="attribution-section">

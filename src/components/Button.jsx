@@ -2,17 +2,18 @@ import { Link } from 'react-router-dom';
 import './Button.scss';
 import PropTypes from 'prop-types';
 
-function Button({ className, role, linkTo, content }) {
-    return <Link to={linkTo} role={role} className={`button ${className}`}>
+function Button({ className, role, linkTo, content, isLink }) {
+    return isLink ? <Link to={linkTo} role={role} className={`button ${className}`}>
         {content}
-    </Link>
+    </Link> : <button role={role} className={`button ${className}`}>{content}</button>
 }
 
 Button.propTypes = {
     className: PropTypes.string,
     role: PropTypes.string,
     linkTo: PropTypes.string,
-    content: PropTypes.string
+    content: PropTypes.string,
+    isLink: PropTypes.string
 }
 
 

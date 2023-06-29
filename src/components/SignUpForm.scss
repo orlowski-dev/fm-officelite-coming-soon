@@ -1,0 +1,29 @@
+.sign-up-form {
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 13px;
+    max-width: 448px;
+    margin: 0 auto;
+    margin-top: 24px;
+
+    form {
+
+        input {
+            margin-top: 5px;
+        }
+
+        .button-area {
+            margin-top: 40px;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .sign-up-form {
+        padding: 40px;
+    }
+}

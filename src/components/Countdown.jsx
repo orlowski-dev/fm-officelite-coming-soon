@@ -57,7 +57,7 @@ function Countdown({ theme }) {
         }
     })
 
-    return <div className="countdown-component">
+    return <div className={`countdown-component ${theme === 'light' ? 'light' : ''}`}>
         <h2>
             Coming <span>{targetDate.getDay()} {getMonth(targetDate.getMonth())} {targetDate.getFullYear()}</span>
         </h2>

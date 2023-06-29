@@ -1,5 +1,21 @@
 .countdown-component {
 
+    &.light {
+        h2 {
+            color: var(--dark-2);
+        }
+
+        .tiles-container {
+            .tile {
+                background-color: #EEF2FF;
+
+                h3 {
+                    color: var(--purple-1);
+                }
+            }
+        }
+    }
+
     h2 {
         color: var(--white);
         letter-spacing: 5px;
@@ -19,7 +35,7 @@
         text-align: center;
 
         .tile {
-            padding: 16px 10px;
+            padding: 22px 10px;
             border-radius: 4px;
             background-color: var(--dark-1);
             text-align: center;
@@ -38,8 +54,12 @@
 
 @media screen and (min-width: 768px) {
     .countdown-component {
-        .tiles-container .tile h3 {
-            font-size: 3rem;
+        .tiles-container .tile {
+            h3 {
+                font-size: 3rem;
+            }
+
+            padding: 12px 10px;
         }
     }
 }

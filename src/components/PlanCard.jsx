@@ -4,7 +4,18 @@ import Button from './Button';
 
 function PlanCard({ planName, planPrice, planLimitations, planFeatures, highlighted }) {
 
-    const button = highlighted ? <Button linkTo='/' className='white' content='Try for Free' /> : <Button linkTo='/' className='secondary' content='Try for Free' />
+    const signUpPageUrl = '/sign-up';
+    const button = highlighted ? <Button
+        isLink={true}
+        linkTo={signUpPageUrl}
+        className='white'
+        content='Try for Free'
+    /> : <Button
+        isLink={true}
+        linkTo={signUpPageUrl}
+        className='secondary'
+        content='Try for Free'
+    />
 
     return <div className={`plan-card-component ${highlighted ? 'highlighted' : ''}`}>
         <div className="name-n-price">

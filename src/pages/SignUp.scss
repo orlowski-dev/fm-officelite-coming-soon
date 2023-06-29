@@ -1,0 +1,16 @@
+.sign-up-component {
+    position: relative;
+
+    .countdown-component {
+        width: 100%;
+        max-width: 448px;
+        margin: 0 auto;
+        margin-top: 58px;
+    }
+}
+
+@media screen and (min-width: 1110px) {
+    .sign-up-component {
+        padding: 39px;
+    }
+}

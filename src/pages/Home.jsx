@@ -23,7 +23,7 @@ function Home() {
     });
 
     const img = <img src={ChartsIllustration} alt='charts illustration' />;
-    const button = <div><Button className='primary' linkTo='/' content='Get Started' /></div>;
+    const button = <div><Button isLink={true} className='primary' linkTo='/sign-up' content='Get Started' /></div>;
 
     return <div className="home-component">
         <HeaderAndIntro

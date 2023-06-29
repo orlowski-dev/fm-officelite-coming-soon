@@ -2,8 +2,8 @@ import './HeaderAndIntro.scss';
 import Logo from '/shared/logo.svg';
 import PropTypes from 'prop-types';
 
-function Cta({ h1Content, pContent, imgFormSectionComponent, contentAction }) {
-    return <div className="cta-component">
+function HeaderAndIntro({ h1Content, pContent, imgFormSectionComponent, contentAction, forSignUp }) {
+    return <div className={`header-and-sign-up-component ${forSignUp ? 'for-sign-up' : ''}`}>
         <header>
             <img src={Logo} alt="app logo" />
         </header>
@@ -20,11 +20,12 @@ function Cta({ h1Content, pContent, imgFormSectionComponent, contentAction }) {
     </div>
 }
 
-Cta.propTypes = {
+HeaderAndIntro.propTypes = {
     h1Content: PropTypes.string,
     pContent: PropTypes.string,
     imgFormSectionComponent: PropTypes.node,
-    contentAction: PropTypes.node
+    contentAction: PropTypes.node,
+    forSignUp: PropTypes.bool
 }
 
-export default Cta;
+export default HeaderAndIntro;
