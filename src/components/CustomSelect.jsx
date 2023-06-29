@@ -3,7 +3,7 @@ import ArrowDownIcon from '../assets/sign-up/icon-arrow-down.svg';
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-function CustomSelect({ options }) {
+function CustomSelect({ options, reference }) {
 
     const handleCurrSelected = () => {
 
@@ -53,7 +53,7 @@ function CustomSelect({ options }) {
     return <div className="custom-select-area">
         <div className="curr-selected" onClick={handleCurrSelected}>
             <div>
-                <input type="hidden" name="planType" value={planTypeInputValue} />
+                <input type="hidden" name="planType" value={planTypeInputValue} ref={reference} />
                 <p>
                     {selectSelectedValues.name} <span>{selectSelectedValues.price}</span>
                 </p>
@@ -69,7 +69,8 @@ function CustomSelect({ options }) {
 }
 
 CustomSelect.propTypes = {
-    options: PropTypes.array
+    options: PropTypes.array,
+    reference: PropTypes.object
 }
 
 export default CustomSelect;
