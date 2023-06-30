@@ -1,7 +1,7 @@
 import './Input.scss';
 import PropTypes from 'prop-types';
 
-function Input({ inpType, inpPlaceholder, inpIsInvalid, inpDefValue, inpName, inpMode, reference }) {
+function Input({ inpType, inpPlaceholder, inpIsInvalid, inpDefValue, inpName, inpMode, reference, props }) {
     return <div className={`input-area ${inpIsInvalid ? 'invalid' : ''}`}>
         <input
             type={inpType}
@@ -12,6 +12,7 @@ function Input({ inpType, inpPlaceholder, inpIsInvalid, inpDefValue, inpName, in
             inputMode={inpMode || undefined}
             ref={reference}
             autoComplete='off'
+            {...props}
         />
     </div>
 }
@@ -23,7 +24,8 @@ Input.propTypes = {
     inpDefValue: PropTypes.string,
     inpName: PropTypes.string,
     inpMode: PropTypes.string,
-    reference: PropTypes.object
+    reference: PropTypes.object,
+    props: PropTypes.any
 }
 
 export default Input;

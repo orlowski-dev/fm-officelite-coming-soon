@@ -27,6 +27,7 @@ const isTextInpValid = (input, min, max) => {
 }
 
 
+
 function SignUpForm() {
 
     const inpRefs = {
@@ -56,7 +57,6 @@ function SignUpForm() {
         }
     };
 
-
     return <div className="sign-up-form">
         <form method='post' onSubmit={handleFormSubmint}>
             <Input
@@ -82,6 +82,10 @@ function SignUpForm() {
                 inpName='phone-no'
                 inpMode='tel'
                 reference={inpRefs.phoneNo}
+                props={{
+                    // allow only digits
+                    onInput: (e) => e.target.value = e.target.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')
+                }}
             />
             <Input
                 inpPlaceholder='Company'
